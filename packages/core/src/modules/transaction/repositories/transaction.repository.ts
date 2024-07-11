@@ -5,7 +5,7 @@ import {ulid} from "ulid";
 import {between, eq, gt, inArray, InferInsertModel, sql} from "drizzle-orm";
 import {db} from "../../../drizzle";
 
-// removed updatedAt, as the core ledger transactions are immutable. to resolve the
+//NOTE: removed updatedAt, as the core ledger transactions are immutable. to resolve/reconciliation new documents should be added with corresponding description
 export class TransactionRepository extends BaseRepository(db, transactions) {
     async createTransaction(connection: AwsDataApiPgDatabase, transaction: Partial<typeof transactions.$inferInsert>) {
         const newTransaction = {
