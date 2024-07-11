@@ -1,4 +1,4 @@
-# Contract Management Service
+# Core ledger Service
 A Prototype implementation for Core-ledger System Case Study
 
 ### Improvements and Enhancements
