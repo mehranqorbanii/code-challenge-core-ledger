@@ -2,6 +2,7 @@
 node_modules
 
 # sst
+.idea
 .sst
 .build
 cdk.context.json
