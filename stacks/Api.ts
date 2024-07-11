@@ -14,6 +14,9 @@ export function Api({ stack }: StackContext) {
         bind: [db, bus],
       },
     },
+
+      // here for some endpoints the design can be different and not use the /users/ in the route but as for now no auth is provided and we can not detect users from the token or etc.
+      //preferred to have the user id in the route rather than query param or other approaches
       routes: {
           "GET /api/v1/users/{id}":
               "packages/functions/src/modules/user/user.api-handler.get",
