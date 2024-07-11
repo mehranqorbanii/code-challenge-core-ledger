@@ -1,0 +1,1 @@
+ALTER TABLE "transaction"."transactions" ALTER COLUMN "fee" DROP NOT NULL;
