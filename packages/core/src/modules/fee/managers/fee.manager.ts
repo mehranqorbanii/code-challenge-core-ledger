@@ -3,17 +3,17 @@ import {fees} from "../models";
 import feeRepository, {FeeRepository} from "../repositories/fee.repository";
 import {FeeEvents} from "../events/fee";
 import {InferInsertModel} from "drizzle-orm";
-import feeCalculationServiceLocator, {FeeCalculationServiceLocator} from "./calculation/feeCalculationServiceLocator";
+import feeCalculationServiceLocator from "./calculation/feeCalculationServiceLocator";
 import {ContextFactory} from "./calculation/strategies/feeCalculationStrategy";
 
-const DEFAULT_FEE = 1; // in case fee is not set it returns a flat fee of 1.
+const DEFAULT_FEE = 1; //Note: in case fee is not set it returns a flat fee of 1.
 const feeRepo = new FeeRepository();
 
 class FeeManagerClass {
 
     private baseManager = baseManager<typeof fees, FeeRepository>(feeRepo, FeeEvents);
 
-    // although fee can be uniq on currency + type but for now we keep the fee uniq by currency, for the sake if simplicity
+    //Note: although fee can be uniq on currency + type but for now we keep the fee uniq by currency, for the sake if simplicity
     async create(newFee: InferInsertModel<typeof fees>) {
         const fee = await feeRepo.getByCurrency(newFee.currency)
         if (fee) {

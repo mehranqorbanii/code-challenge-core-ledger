@@ -16,5 +16,4 @@ A Prototype implementation for Core-ledger System Case Study
     * Other strategies for fee calculation can be added, currently only fixed and percentage based are supported.
     * currently we can use EOD report to see balance and transaction inconsistency, but it's manual, we can have a job that runs at the end of the day and if there's any data that needs reconciliation it can trigger an alert
 * At the end there might be some language barriers throughout the code from JAVA to TypeScript
-* Multi c
 ### Through the code 'Note' comments are for assumption that I made, and 'TODO' comments are for suggestions and improvements. ###
